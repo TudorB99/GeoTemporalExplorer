@@ -1,25 +1,28 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-
+import "leaflet/dist/leaflet.css";
 import "./App.css";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
-function App() {
+export default function App() {
+  const center = { lat: 51.505, lng: -0.09 };
+
   return (
     <div className="page">
-      {/* <header className="header">My header</header> */}
       <div className="mapWrap">
         <MapContainer
-          center={[51.505, -0.09]}
+          center={center}
           zoom={13}
           scrollWheelZoom={false}
+          preferCanvas
         >
           <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+            // Faster than the default OSM tile host for many people
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution="&copy; OpenStreetMap contributors &copy; CARTO"
+            detectRetina
+            updateWhenIdle
           />
-          <Marker position={[51.505, -0.09]}>
+
+          <Marker position={center}>
             <Popup>
               A pretty CSS3 popup. <br /> Easily customizable.
             </Popup>
@@ -29,5 +32,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
