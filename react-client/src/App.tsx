@@ -15,7 +15,6 @@ export default function App() {
           preferCanvas
         >
           <TileLayer
-            // Faster than the default OSM tile host for many people
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution="&copy; OpenStreetMap contributors &copy; CARTO"
             detectRetina
