@@ -4,7 +4,7 @@ import { generateStops } from "../../utils/coordinates";
 import type { LatLng } from "../../types/index_types";
 
 export const DeliveryLayer: FC<{ center: LatLng }> = ({ center }) => {
-  const stops = useMemo(() => generateStops(center, 250, 4500), [center]); // 250 points within 4.5km
+  const stops = useMemo(() => generateStops(center, 100, 4500), [center]);
 
   const routePositions = useMemo(
     () => stops.map((s) => [s.lat, s.lng] as [number, number]),
