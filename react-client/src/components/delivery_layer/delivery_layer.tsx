@@ -4,7 +4,14 @@ import { generateStops } from "../../utils/coordinates";
 import type { LatLng } from "../../types/index_types";
 
 export const DeliveryLayer: FC<{ center: LatLng }> = ({ center }) => {
-  const stops = useMemo(() => generateStops(center, 100, 4500), [center]);
+  const stops = useMemo(
+    () =>
+      generateStops(center, 100, 4500, {
+        stepMeters: 200, // tighter = more "same neighborhood"
+        jumpEvery: 25, // set to 0 if you want no jumps at all
+      }),
+    [center],
+  );
 
   const routePositions = useMemo(
     () => stops.map((s) => [s.lat, s.lng] as [number, number]),
@@ -24,7 +31,6 @@ export const DeliveryLayer: FC<{ center: LatLng }> = ({ center }) => {
         </CircleMarker>
       ))}
 
-      {/* OPTIONAL: draw a route */}
       <Polyline positions={routePositions} />
     </>
   );
