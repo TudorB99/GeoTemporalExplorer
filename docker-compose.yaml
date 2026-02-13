@@ -1,0 +1,20 @@
+services:
+  api:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: geo-api
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8000:8000"
+
+  web:
+    build:
+      context: ./react-client
+      dockerfile: Dockerfile
+    container_name: geo-web
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:4173:4173"
+    depends_on:
+      - api
