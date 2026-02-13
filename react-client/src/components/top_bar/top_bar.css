@@ -1,0 +1,86 @@
+.topbar {
+  height: var(--topbar-h);
+  display: grid;
+  grid-template-columns: 1fr minmax(220px, 520px) 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 70%),
+    rgba(10, 11, 17, 0.55);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.topbar__left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.topbar__menuBtn {
+  display: none; /* shown on mobile */
+}
+
+.topbar__title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topbar__center {
+  display: flex;
+  justify-content: center;
+}
+
+.topbar__search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 12px;
+}
+
+.topbar__searchIcon {
+  color: var(--muted);
+}
+
+.topbar__searchInput {
+  width: 100%;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+}
+
+.topbar__right {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .topbar {
+    grid-template-columns: 1fr minmax(120px, 1.6fr) 1fr;
+  }
+
+  .topbar__menuBtn {
+    display: inline-grid;
+  }
+
+  .topbar__center {
+    justify-content: stretch;
+  }
+}

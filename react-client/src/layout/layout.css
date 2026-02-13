@@ -1,0 +1,107 @@
+/* App shell */
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+  min-height: 100vh;
+}
+
+.layout__content {
+  display: grid;
+  grid-template-rows: var(--topbar-h) 1fr;
+  min-width: 0;
+}
+
+.main {
+  padding: 18px;
+  min-width: 0;
+}
+
+/* Overlay for mobile drawer */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  border: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 15;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .overlay {
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease;
+  }
+
+  .overlay[data-open="true"] {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* Shared UI bits */
+.iconButton {
+  width: 36px;
+  height: 36px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+}
+
+.iconButton:focus-visible {
+  outline: var(--focus);
+  outline-offset: 2px;
+}
+
+.button {
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(120, 170, 255, 0.18);
+  cursor: pointer;
+}
+
+.button--ghost {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.button:focus-visible {
+  outline: var(--focus);
+  outline-offset: 2px;
+}
+
+.card {
+  max-width: 760px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 70%),
+    rgba(255, 255, 255, 0.02);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.card__title {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.card__text {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay {
+    transition: none !important;
+  }
+}
