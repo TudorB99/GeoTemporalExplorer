@@ -1,9 +1,12 @@
-import "leaflet/dist/leaflet.css";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import type { FC } from "react";
 import "./custom_map.css";
+import "leaflet/dist/leaflet.css";
+import { MapContainer, TileLayer } from "react-leaflet";
+import type { FC } from "react";
+import { DeliveryLayer } from "../delivery_layer/delivery_layer";
+
 const CustomMap: FC = () => {
   const center = { lat: 53.8008, lng: -1.5491 };
+
   return (
     <div className="mapWrap">
       <MapContainer
@@ -18,11 +21,7 @@ const CustomMap: FC = () => {
           maxZoom={20}
         />
 
-        <Marker position={center}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
+        <DeliveryLayer center={center} />
       </MapContainer>
     </div>
   );
