@@ -3,11 +3,11 @@ FROM python:3.13-slim
 WORKDIR /code
 
 # Copy and install dependencies first (better caching)
-COPY server/requirements.txt /code/requirements.txt
+COPY ./requirements.txt /code/requirements.txt
 RUN pip install --no-cache-dir -r /code/requirements.txt
 
 # Copy only the server code (ignore clients for now)
-COPY server /code/server
+COPY . /code/server
 
 EXPOSE 8000
 
