@@ -3,7 +3,7 @@ import "./App.css";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
 export default function App() {
-  const center = { lat: 51.505, lng: -0.09 };
+  const center = { lat: 53.8008, lng: -1.5491 };
 
   return (
     <div className="page">
