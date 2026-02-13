@@ -13,10 +13,9 @@ const CustomMap: FC = () => {
         preferCanvas
       >
         <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution="&copy; OpenStreetMap contributors &copy; CARTO"
-          detectRetina
-          updateWhenIdle
+          url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+          attribution="&copy; OpenStreetMap contributors &copy; Stadia Maps"
+          maxZoom={20}
         />
 
         <Marker position={center}>

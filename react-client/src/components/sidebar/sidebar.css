@@ -1,11 +1,9 @@
-/* Sidebar */
 .sidebar {
   position: sticky;
   top: 0;
   height: 100vh;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 30%),
-    var(--panel);
+    linear-gradient(180deg, var(--surface-04), transparent 30%), var(--panel);
   border-right: 1px solid var(--border);
   padding: 14px;
   display: grid;
@@ -34,10 +32,10 @@
   border-radius: 4px;
   background: linear-gradient(
     135deg,
-    rgba(120, 170, 255, 0.95),
-    rgba(0, 255, 180, 0.7)
+    var(--accent-blue-95),
+    var(--accent-mint-70)
   );
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 18px var(--shadow-logo-color);
 }
 
 .sidebar__brandText {
@@ -53,7 +51,7 @@
 }
 
 .sidebar__nav {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--surface-03);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 10px;
@@ -84,7 +82,7 @@
 }
 
 .sidebar__link:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--surface-05);
   border-color: var(--border);
 }
 
@@ -103,7 +101,7 @@
   padding: 10px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--surface-03);
 }
 
 .sidebar__avatar {
@@ -112,8 +110,8 @@
   border-radius: 12px;
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.16),
-    rgba(255, 255, 255, 0.06)
+    var(--avatar-surface-16),
+    var(--avatar-surface-06)
   );
   border: 1px solid var(--border);
 }

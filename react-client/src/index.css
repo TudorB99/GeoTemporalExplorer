@@ -4,7 +4,9 @@ body,
   height: 100%;
   margin: 0;
 }
+
 :root {
+  /* Existing */
   --bg: #0b0c10;
   --panel: #121420;
   --text: #e9ecf1;
@@ -19,8 +21,27 @@ body,
   --radius-sm: 10px;
 
   --focus: 2px solid rgba(120, 170, 255, 0.7);
-}
 
+  --bg-radial-blue: rgba(90, 110, 255, 0.18);
+  --bg-radial-mint: rgba(0, 255, 180, 0.1);
+
+  --surface-02: rgba(255, 255, 255, 0.02);
+  --surface-03: rgba(255, 255, 255, 0.03);
+  --surface-04: rgba(255, 255, 255, 0.04);
+  --surface-05: rgba(255, 255, 255, 0.05);
+
+  --overlay-bg: rgba(0, 0, 0, 0.55);
+  --topbar-glass: rgba(10, 11, 17, 0.55);
+
+  --accent-blue-18: rgba(120, 170, 255, 0.18);
+  --accent-blue-95: rgba(120, 170, 255, 0.95);
+  --accent-mint-70: rgba(0, 255, 180, 0.7);
+
+  --avatar-surface-16: rgba(255, 255, 255, 0.16);
+  --avatar-surface-06: rgba(255, 255, 255, 0.06);
+
+  --shadow-logo-color: rgba(0, 0, 0, 0.35);
+}
 * {
   box-sizing: border-box;
 }

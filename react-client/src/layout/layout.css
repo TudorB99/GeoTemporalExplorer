@@ -22,7 +22,7 @@
   position: fixed;
   inset: 0;
   border: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: var(--overlay-bg);
   z-index: 15;
 }
 
@@ -52,7 +52,7 @@
   place-items: center;
   border-radius: 12px;
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--surface-03);
   cursor: pointer;
 }
 
@@ -66,12 +66,12 @@
   padding: 0 12px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: rgba(120, 170, 255, 0.18);
+  background: var(--accent-blue-18);
   cursor: pointer;
 }
 
 .button--ghost {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--surface-03);
 }
 
 .button:focus-visible {
@@ -84,8 +84,8 @@
   border-radius: var(--radius);
   border: 1px solid var(--border);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 70%),
-    rgba(255, 255, 255, 0.02);
+    linear-gradient(180deg, var(--surface-05), transparent 70%),
+    var(--surface-02);
   padding: 18px;
   box-shadow: var(--shadow);
 }

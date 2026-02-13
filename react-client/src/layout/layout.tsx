@@ -52,18 +52,7 @@ const Layout: FC<LayoutProps> = ({ title, children }) => {
         <TopBar title={title} onMenuClick={toggleSidebar} />
 
         <main className="main" aria-label="Main content">
-          {children ?? (
-            <div className="card">
-              <h2 className="card__title">Content</h2>
-              <p className="card__text">
-                Put your page content here by rendering{" "}
-                <code>{"<Layout>...</Layout>"}</code>.
-              </p>
-              <button className="button" onClick={openSidebar} type="button">
-                Open sidebar
-              </button>
-            </div>
-          )}
+          {children}
         </main>
       </div>
     </div>
