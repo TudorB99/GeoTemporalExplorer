@@ -15,12 +15,3 @@ body,
   display: flex;
   flex-direction: column;
 }
-
-.mapWrap {
-  flex: 1; /* take remaining height */
-}
-
-.mapWrap .leaflet-container {
-  height: 100%;
-  width: 100%;
-}
