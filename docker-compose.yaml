@@ -27,6 +27,9 @@ services:
       - "127.0.0.1:8000:8000"
     environment:
       DATABASE_URL: postgresql+psycopg2://appuser:change-me-very-strong@db:5432/appdb
+      JWT_SECRET: "super-long-random-string-change-this"
+      JWT_ALGORITHM: "HS256"
+      ACCESS_TOKEN_EXPIRE_MINUTES: "60"
     depends_on:
       db:
         condition: service_healthy
